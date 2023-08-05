@@ -1,6 +1,7 @@
 FROM openjdk:17-oracle
 EXPOSE 8182
 ARG JAR_FILE=*.jar
+COPY ssl /etc/ssl
 COPY ${JAR_FILE} stock-service.jar
 ENTRYPOINT ["java", "-jar", "/stock-service.jar"]
 
